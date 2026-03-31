@@ -869,8 +869,8 @@ footer {
     }
 
     header {
-        height: 70px !important;
-        padding: 0;
+        height: auto !important;
+        padding: 15px 0 0;
         position: relative !important;
     }
 
@@ -879,14 +879,87 @@ footer {
         justify-content: space-between;
         align-items: center;
         gap: 0;
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: block !important;
+        font-size: 20px;
+        color: var(--text-main);
+        cursor: pointer;
+        padding-right: 15px;
     }
 
     .logo {
-        font-size: 20px; /* Smaller for slim header */
+        font-size: 18px; /* Smaller for slim header */
+        flex-grow: 1;
+        text-align: left;
     }
 
     header .nav-links {
-        display: none; /* Hide main links on mobile, use a burger later if needed or rely on home/search */
+        display: none !important; /* Switch to Pan Menu */
+    }
+
+    /* Pan Menu Overlay */
+    .mobile-pan-menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
+        background: #ffffff;
+        z-index: 2000;
+        padding: 60px 40px;
+        transition: var(--transition);
+        box-shadow: 20px 0 60px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        text-align: left;
+    }
+
+    .mobile-pan-menu.active {
+        left: 0;
+    }
+
+    .mobile-pan-menu .close-menu {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .mobile-link {
+        font-family: 'Outfit', sans-serif;
+        font-size: 28px;
+        font-weight: 800;
+        color: var(--text-main);
+        text-transform: uppercase;
+        letter-spacing: -1.5px;
+        transition: var(--transition);
+    }
+
+    .mobile-link:hover, .mobile-link.active {
+        color: var(--accent);
+    }
+
+    .pan-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0,0,0,0.4);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        z-index: 1999;
+        display: none;
+    }
+
+    .pan-overlay.active {
+        display: block;
     }
 
     .shop-controls {
