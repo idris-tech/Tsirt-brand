@@ -187,7 +187,14 @@
                             <thead>
                                 <tr>
                                     <th>Style & Color</th>
-                                    <th>Sizes (S - XL)</th>
+                                    <th>
+                                        <div style="display: flex; gap: 10px; padding-left: 0;">
+                                            <span style="width: 80px; text-align: center;">S</span>
+                                            <span style="width: 80px; text-align: center;">M</span>
+                                            <span style="width: 80px; text-align: center;">L</span>
+                                            <span style="width: 80px; text-align: center;">XL</span>
+                                        </div>
+                                    </th>
                                     <th>Allocated Qty</th>
                                 </tr>
                             </thead>
@@ -216,16 +223,11 @@
                         </div>
                     </td>
                     <td>
-                        <div style="display: flex; gap: 10px; align-items: flex-end;">
+                        <div style="display: flex; gap: 10px;">
                             ${sizes.map(size => {
                                 const key = `${color}-${size}`;
-                                return `
-                                    <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-                                        <span style="font-size: 10px; font-weight: 800; color: var(--accent); letter-spacing: 1px;">${size}</span>
-                                        <input type="number" class="qty-input" min="0" 
-                                            onchange="updateAllocation('${key}', this.value)" value="${currentSelections[key] || 0}">
-                                    </div>
-                                `;
+                                return `<input type="number" class="qty-input" min="0" 
+                                    onchange="updateAllocation('${key}', this.value)" value="${currentSelections[key] || 0}">`;
                             }).join('')}
                         </div>
                     </td>
