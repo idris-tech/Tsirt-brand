@@ -113,8 +113,18 @@
             margin-bottom: 10px;
         }
 
+        .mobile-label {
+            display: none;
+            font-size: 10px;
+            font-weight: 800;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
         /* Mobile Responsive Allocation Grid */
         @media (max-width: 768px) {
+            .mobile-label { display: block; }
             .config-grid { 
                 display: flex;
                 flex-direction: column;
@@ -329,8 +339,13 @@
                         <div style="display: flex; gap: 10px;">
                             ${sizes.map(size => {
                                 const key = `${color}-${size}`;
-                                return `<input type="number" class="qty-input" min="0" 
-                                    onchange="updateAllocation('${key}', this.value)" value="${currentSelections[key] || 0}">`;
+                                return `
+                                    <div style="display: flex; flex-direction: column; align-items: center;">
+                                        <span class="mobile-label">${size}</span>
+                                        <input type="number" class="qty-input" min="0" 
+                                            onchange="updateAllocation('${key}', this.value)" value="${currentSelections[key] || 0}">
+                                    </div>
+                                `;
                             }).join('')}
                         </div>
                     </td>
