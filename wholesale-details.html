@@ -113,9 +113,42 @@
             margin-bottom: 10px;
         }
 
-        @media (max-width: 1024px) {
-            .config-grid { grid-template-columns: 1fr; }
-            .bundle-summary-card { position: static; }
+        /* Mobile Responsive Allocation Grid */
+        @media (max-width: 768px) {
+            .config-grid { grid-template-columns: 1fr; gap: 40px; }
+            .configurator-wrapper { padding: 120px 0 60px; }
+            
+            .config-table, .config-table thead, .config-table tbody, .config-table th, .config-table td, .config-table tr { 
+                display: block; 
+                width: 100%;
+            }
+
+            .config-table thead { display: none; } /* Hide traditional headers */
+            
+            .config-table td {
+                padding: 20px;
+                background: #fcfcfc;
+                border-bottom: 1px solid rgba(0,0,0,0.03);
+                border-radius: 0 !important;
+            }
+
+            .config-table tr {
+                background: #f8f8f8;
+                border-radius: 20px;
+                margin-bottom: 25px;
+                overflow: hidden;
+                border: 1px solid rgba(0,0,0,0.05);
+            }
+
+            .qty-input {
+                width: 60px; /* Slimmer for mobile packing */
+                padding: 10px;
+            }
+
+            .style-card {
+                padding: 10px;
+            }
+            .style-card img { height: 150px; }
         }
     </style>
 </head>

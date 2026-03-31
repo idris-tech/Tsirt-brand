@@ -120,6 +120,12 @@
                 gap: 60px;
             }
         }
+
+        @media (max-width: 768px) {
+            .form-grid-2 {
+                grid-template-columns: 1fr !important;
+            }
+        }
     </style>
 </head>
 <body style="background: #ffffff;">
@@ -169,7 +175,7 @@
                         </div>
 
                         <form id="contactForm">
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="form-grid-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                                 <div class="form-group">
                                     <label>First Name</label>
                                     <input type="text" placeholder="John" required>
