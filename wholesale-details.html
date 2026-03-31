@@ -67,6 +67,28 @@
             font-family: inherit;
         }
 
+        .style-card {
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+            background: #ffffff;
+            text-align: left;
+        }
+
+        .style-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent);
+        }
+
+        .style-card.active {
+            border: 2px solid var(--accent);
+            box-shadow: 0 10px 30px rgba(255, 106, 0, 0.1);
+            background: #fffdfb;
+        }
+
         .bundle-progress {
             margin: 30px 0;
             background: #eee;
@@ -146,6 +168,14 @@
         const bundle = wholesaleBundles.find(b => b.id === bundleId);
 
         let currentSelections = {};
+        let selectedStyle = 'Heavyweight Essential';
+
+        function selectStyle(style, el) {
+            selectedStyle = style;
+            document.querySelectorAll('.style-card').forEach(c => c.classList.remove('active'));
+            el.classList.add('active');
+            document.getElementById('selected-style-label').textContent = style;
+        }
 
         function initConfig() {
             if (!bundle) return;
@@ -156,12 +186,35 @@
                 </div>
                 <h1 style="font-size: 48px; letter-spacing: -2px; margin-bottom: 60px;">Customize Your <span>${bundle.title}</span></h1>
 
+                <!-- Step 1: Select Style -->
+                <div style="margin-bottom: 60px;">
+                    <h3 style="font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; color: var(--text-muted);">Step 1: Choose Your Primary Silhouette</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
+                        <div class="style-card active" onclick="selectStyle('Heavyweight Essential', this)">
+                            <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&q=80&w=600" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 15px;">
+                            <h4 style="font-size: 16px; margin-bottom: 5px;">Heavyweight Essential</h4>
+                            <p style="font-size: 12px; opacity: 0.7;">240GSM | Oversized Fit</p>
+                        </div>
+                        <div class="style-card" onclick="selectStyle('Essential Basic', this)">
+                            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&q=80&w=600" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 15px;">
+                            <h4 style="font-size: 16px; margin-bottom: 5px;">Essential Basic</h4>
+                            <p style="font-size: 12px; opacity: 0.7;">180GSM | Regular Fit</p>
+                        </div>
+                        <div class="style-card" onclick="selectStyle('Elite Organic', this)">
+                            <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&q=80&w=600" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 15px;">
+                            <h4 style="font-size: 16px; margin-bottom: 5px;">Elite Organic</h4>
+                            <p style="font-size: 12px; opacity: 0.7;">200GSM | Sustainable Cotton</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Allocation -->
                 <div class="config-grid">
                     <!-- Left: Summary -->
                     <div class="bundle-summary-card">
                         <h3 style="font-size: 24px; margin-bottom: 20px; color: var(--text-main);">${bundle.title}</h3>
                         <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 30px;">
-                            Distribute your <strong>${bundle.count} pieces</strong> across any size and color combination in our elite inventory.
+                            Distribute your <strong>${bundle.count} pieces</strong> across the following colors and sizes for your selected <span id="selected-style-label" style="color: var(--accent); font-weight: 800;">Heavyweight Essential</span>.
                         </p>
 
                         <div class="status-pill">
