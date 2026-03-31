@@ -216,15 +216,20 @@
                         </div>
                     </td>
                     <td>
-                        <div style="display: flex; gap: 10px;">
+                        <div style="display: flex; gap: 10px; align-items: flex-end;">
                             ${sizes.map(size => {
                                 const key = `${color}-${size}`;
-                                return `<input type="number" class="qty-input" placeholder="${size}" min="0" 
-                                    onchange="updateAllocation('${key}', this.value)" value="${currentSelections[key] || 0}">`;
+                                return `
+                                    <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                                        <span style="font-size: 10px; font-weight: 800; color: var(--accent); letter-spacing: 1px;">${size}</span>
+                                        <input type="number" class="qty-input" min="0" 
+                                            onchange="updateAllocation('${key}', this.value)" value="${currentSelections[key] || 0}">
+                                    </div>
+                                `;
                             }).join('')}
                         </div>
                     </td>
-                    <td id="row-total-${color}" style="font-weight: 800; color: var(--text-main);">0</td>
+                    <td id="row-total-${color}" style="font-weight: 800; color: var(--text-main); font-size: 18px;">0</td>
                 </tr>
             `).join('');
         }
