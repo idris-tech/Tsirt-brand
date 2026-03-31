@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Collections | Elite Wholesale</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/main.js" defer></script>
+    <style>
+        /* Shop Specific Premium Overrides */
+        .shop-hero {
+            background: #ffffff;
+            padding: 180px 0 60px;
+            text-align: center;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .shop-hero h1 {
+            font-size: 56px;
+            letter-spacing: -2.5px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .shop-hero p {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .shop-controls {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 100;
+            padding: 24px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .controls-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .filter-tags {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding-bottom: 5px;
+            scrollbar-width: none;
+        }
+
+        .filter-tag {
+            padding: 10px 24px;
+            background: #f8f8f8;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 700;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .filter-tag:hover {
+            background: #f0f0f0;
+        }
+
+        .filter-tag.active {
+            background: var(--text-main);
+            color: white;
+        }
+
+        .sort-dropdown {
+            padding: 12px 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(0,0,0,0.08);
+            font-size: 14px;
+            font-weight: 600;
+            font-family: inherit;
+            outline: none;
+            background: white;
+            cursor: pointer;
+        }
+
+        .shop-grid-container {
+            padding: 80px 0;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .controls-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .sort-dropdown {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Nav Bar -->
+    <div class="top-nav-bar">
+        NATIONWIDE DELIVERY | SECURE CHECKOUT | PREMIUM QUALITY BLANKS
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <a href="index.html" class="logo">ELITE <span>WHOLESALE</span></a>
+            
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="shop.html" class="active">Shop</a>
+                <a href="wholesale.html">Wholesale</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div style="display: flex; gap: 20px; align-items: center; font-size: 20px;">
+                <a href="#"><i class="fa-solid fa-search"></i></a>
+                <a href="cart.html" style="position: relative;">
+                    <i class="fa-solid fa-shopping-bag"></i>
+                    <span class="cart-count" style="position: absolute; top: -8px; right: -8px; background: var(--accent); color: white; font-size: 10px; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800;">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Shop Hero -->
+    <section class="shop-hero">
+        <div class="container">
+            <h1>Premium <span>Collections</span></h1>
+            <p>Our meticulously curated blanks are engineered for perfection. Scalable quality for the modern streetwear brand.</p>
+        </div>
+    </section>
+
+    <!-- Shop Controls -->
+    <div class="shop-controls">
+        <div class="container">
+            <div class="controls-inner">
+                <div class="filter-tags">
+                    <div class="filter-tag active" data-category="all">All Styles</div>
+                    <div class="filter-tag" data-category="Basic">Essential Blanks</div>
+                    <div class="filter-tag" data-category="Premium">Heavyweight Luxe</div>
+                    <div class="filter-tag" data-category="Organic">Eco-Series</div>
+                    <div class="filter-tag" data-category="Style">Trending Fits</div>
+                </div>
+                
+                <div style="display: flex; gap: 20px; align-items: center;">
+                    <input type="text" id="shop-search" placeholder="Search elite items..." style="padding: 12px 24px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.08); font-size: 14px; outline: none;">
+                    <select class="sort-dropdown" id="shop-sort">
+                        <option value="featured">Featured First</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Grid -->
+    <section class="shop-grid-container">
+        <div class="container">
+            <div class="grid-4" id="shop-grid">
+                <!-- Products will be injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="color: white; margin-bottom: 24px;">ELITE<span>WHOLESALE</span></a>
+                    <p>Connecting Ghanaian entrepreneurs with world-class premium fashion supply chains.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Collections</h4>
+                    <ul>
+                        <li><a href="shop.html">Heavyweight Tees</a></li>
+                        <li><a href="wholesale.html">Wholesale Bundles</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Elite Wholesale. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+        const shopGrid = document.getElementById('shop-grid');
+        const shopSearch = document.getElementById('shop-search');
+        const shopSort = document.getElementById('shop-sort');
+        const filterTags = document.querySelectorAll('.filter-tag');
+
+        let currentCategory = 'all';
+
+        function renderShop(items) {
+            shopGrid.innerHTML = '';
+            if (items.length === 0) {
+                shopGrid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 100px 0;"><h3>No elite pieces found matching your search.</h3></div>';
+                return;
+            }
+            
+            items.forEach(product => {
+                shopGrid.innerHTML += `
+                    <div class="product-card">
+                        <div class="product-img" onclick="window.location.href='product.html?id=${product.id}'" style="cursor: pointer;">
+                            ${product.badge ? `<span class="badge" style="background: var(--accent); color: white; padding: 4px 10px; border-radius: 4px; font-size: 10px; position: absolute; top: 15px; left: 15px;">${product.badge}</span>` : ''}
+                            <img src="${product.image}" alt="${product.name}">
+                        </div>
+                        <div class="product-info">
+                            <h3 onclick="window.location.href='product.html?id=${product.id}'" style="font-size: 14px; font-weight: 700; cursor: pointer;">${product.name}</h3>
+                            <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">${product.category} | ${product.sizes.join(', ')}</div>
+                            <div class="product-price">GH₵${product.price.toFixed(2)}</div>
+                            <a href="product.html?id=${product.id}" class="btn-tracking" style="width: 100%; margin-top: 20px; border-radius: 12px; text-align: center; display: block;">VIEW PRODUCT</a>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function filterAndSort() {
+            const query = shopSearch.value.toLowerCase();
+            
+            let filtered = products.filter(p => {
+                const matchesSearch = p.name.toLowerCase().includes(query);
+                const matchesCategory = currentCategory === 'all' || p.category === currentCategory;
+                return matchesSearch && matchesCategory;
+            });
+
+            if (shopSort.value === 'price-low') {
+                filtered.sort((a, b) => a.price - b.price);
+            } else if (shopSort.value === 'price-high') {
+                filtered.sort((a, b) => b.price - a.price);
+            } else if (shopSort.value === 'featured') {
+                filtered.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+            }
+
+            renderShop(filtered);
+        }
+
+        shopSearch.addEventListener('input', filterAndSort);
+        shopSort.addEventListener('change', filterAndSort);
+
+        filterTags.forEach(tag => {
+            tag.addEventListener('click', () => {
+                filterTags.forEach(t => t.classList.remove('active'));
+                tag.classList.add('active');
+                currentCategory = tag.getAttribute('data-category');
+                filterAndSort();
+            });
+        });
+
+        // Initial Render
+        renderShop(products);
+    </script>
+</body>
+</html>

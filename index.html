@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Wholesale | Premium T-Shirts & Custom Solutions</title>
+    <meta name="description" content="Start your T-shirt business with premium wholesale stock. High-quality, affordable, and ready-to-sell T-shirts for entrepreneurs.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <!-- Top Nav Bar -->
+    <div class="top-nav-bar">
+        NATIONWIDE DELIVERY | SECURE CHECKOUT | PREMIUM QUALITY BLANKS
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <a href="index.html" class="logo">ELITE <span>WHOLESALE</span></a>
+            
+            <nav class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="wholesale.html">Wholesale</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div style="display: flex; gap: 20px; align-items: center; font-size: 20px;">
+                <a href="#"><i class="fa-solid fa-search"></i></a>
+                <a href="#"><i class="fa-solid fa-user"></i></a>
+                <a href="cart.html" style="position: relative;">
+                    <i class="fa-solid fa-shopping-bag"></i>
+                    <span class="cart-count" style="position: absolute; top: -8px; right: -8px; background: var(--accent); color: white; font-size: 10px; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800;">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <!-- Left: Content -->
+                <div class="hero-content">
+                    <div class="hero-tag">
+                        ✨ CURATED LUXE ARRIVALS 2026
+                    </div>
+                    <h1>Start Your T-Shirt Business with Premium <span>Wholesale Stock.</span></h1>
+                    <p>Elite quality, direct factory prices, and scalable warehouse solutions for the next generation of fashion entrepreneurs.</p>
+                    <div class="hero-actions">
+                        <a href="wholesale.html" class="btn-tracking">BUY IN BULK</a>
+                        <a href="shop.html" class="btn-tracking" style="background: var(--text-main);">SHOP COLLECTIONS</a>
+                        <a href="https://wa.me/YOUR_NUMBER" class="explore-link" style="color: var(--accent);"><i class="fa-brands fa-whatsapp"></i> CONTACT SALES</a>
+                    </div>
+                    <div class="hero-indicators">
+                        <span><i class="fa-solid fa-gem"></i> Premium 240GSM Cotton</span>
+                        <span><i class="fa-solid fa-truck-fast"></i> Fast Global Delivery</span>
+                    </div>
+                </div>
+
+                <!-- Right: Visual -->
+                <div class="hero-visual">
+                    <div class="hero-img-frame">
+                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&q=80&w=1200" alt="Premium T-Shirt">
+                        
+                        <!-- Floating Tags -->
+                        <div class="floating-tag tag-top-left">
+                            <span style="font-size: 10px; font-weight: 700; color: var(--accent);">WHOLESALE BUNDLE</span>
+                            <span style="font-size: 14px; font-weight: 800;">Heavyweight Pack</span>
+                            <span style="font-size: 12px; color: var(--accent);">GH₵ 5,250 / 20pcs</span>
+                        </div>
+
+                        <div class="floating-tag tag-bottom-right" style="flex-direction: row; align-items: center; gap: 10px;">
+                            <i class="fa-solid fa-star" style="color: var(--accent);"></i>
+                            <div>
+                                <span style="display: block; font-size: 12px; font-weight: 800;">Top Rated</span>
+                                <span style="font-size: 10px; opacity: 0.7;">Elite Quality</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 30px; opacity: 0.5; font-size: 12px; letter-spacing: 2px;">
+                        SCROLL TO EXPLORE<br>
+                        <i class="fa-solid fa-mouse" style="margin-top: 10px;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section class="section-padding" style="background: #ffffff;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Collections</h2>
+                <p>Top quality wholesale blanks ready for your brand.</p>
+            </div>
+            <div class="grid-4" id="featured-products"></div>
+        </div>
+    </section>
+
+    <!-- Wholesale Bundles Section -->
+    <section class="section-padding bundles-section" id="wholesale" style="background: var(--secondary-bg);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Wholesale Bundles</h2>
+                <p>Maximize your margins with our tiered wholesale pricing. Perfect for growing brands.</p>
+            </div>
+            <div class="grid-3" id="wholesale-bundles">
+                <!-- Bundles will be injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section-padding why-us" data-aos style="background: #ffffff;">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="margin-bottom: 40px; text-transform: uppercase; letter-spacing: 4px; font-size: 14px; color: var(--accent);">Our Quality</h2>
+                <h3 style="font-size: 48px; margin-bottom: 20px; color: var(--text-main);">Built for the Modern Entrepreneur</h3>
+            </div>
+            <div class="why-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+                <div class="why-item" data-aos style="padding: 40px 20px;">
+                    <i class="fa-solid fa-gem" style="font-size: 32px;"></i>
+                    <h3 style="font-size: 18px;">Premium Cotton</h3>
+                    <p style="font-size: 14px;">100% GOTS certified organic material.</p>
+                </div>
+                <div class="why-item" data-aos style="padding: 40px 20px;">
+                    <i class="fa-solid fa-tag" style="font-size: 32px;"></i>
+                    <h3 style="font-size: 18px;">Best Pricing</h3>
+                    <p style="font-size: 14px;">Direct manufacturer rates guaranteed.</p>
+                </div>
+                <div class="why-item" data-aos style="padding: 40px 20px;">
+                    <i class="fa-solid fa-truck-fast" style="font-size: 32px;"></i>
+                    <h3 style="font-size: 18px;">Global Shipping</h3>
+                    <p style="font-size: 14px;">Express logistics coverage worldwide.</p>
+                </div>
+                <div class="why-item" data-aos style="padding: 40px 20px;">
+                    <i class="fa-solid fa-handshake" style="font-size: 32px;"></i>
+                    <h3 style="font-size: 18px;">Trusted Support</h3>
+                    <p style="font-size: 14px;">Dedicated account management 24/7.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="color: white; margin-bottom: 24px;">ELITE<span>WHOLESALE</span></a>
+                    <p>Connecting Ghanaian entrepreneurs with world-class premium fashion supply chains.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Collections</h4>
+                    <ul>
+                        <li><a href="shop.html">Browse All</a></li>
+                        <li><a href="wholesale.html">Wholesale Packs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Elite Wholesale. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+        const featuredContainer = document.getElementById('featured-products');
+        const featuredItems = products.filter(p => p.featured).slice(0, 4);
+        
+        featuredItems.forEach(product => {
+            featuredContainer.innerHTML += `
+                <div class="product-card">
+                    <div class="product-img" onclick="window.location.href='product.html?id=${product.id}'" style="cursor: pointer;">
+                        <img src="${product.image}" alt="${product.name}">
+                    </div>
+                    <div class="product-info">
+                        <h3 onclick="window.location.href='product.html?id=${product.id}'" style="font-size: 14px; font-weight: 700; cursor: pointer;">${product.name}</h3>
+                        <div style="font-weight: 800; color: var(--accent); font-size: 18px; margin-top: 5px;">GH₵${product.price.toFixed(2)}</div>
+                    </div>
+                </div>
+            `;
+        });
+
+        // Inject Wholesale Bundles
+        const bundleContainer = document.getElementById('wholesale-bundles');
+        const tierIcons = {
+            'Start-Up Bundle': 'fa-solid fa-seedling',
+            'Entrepreneur Pack': 'fa-solid fa-rocket',
+            'Wholesale Partner': 'fa-solid fa-handshake-angle'
+        };
+
+        wholesaleBundles.forEach(bundle => {
+            bundleContainer.innerHTML += `
+                <div class="bundle-card ${bundle.featured ? 'featured' : ''}">
+                    <div class="tier-icon"><i class="${tierIcons[bundle.name] || 'fa-solid fa-box'}"></i></div>
+                    ${bundle.featured ? '<span class="badge">Most Popular</span>' : ''}
+                    <h3>${bundle.name}</h3>
+                    <p class="count">${bundle.count} PREMIUM PCS</p>
+                    <div class="price">GH₵${bundle.price.toLocaleString()}</div>
+                    <p style="color: var(--accent); font-weight: 700; font-size: 14px; margin-bottom: 25px;">Only GH₵${bundle.perPiece.toFixed(2)} / pc</p>
+                    <ul class="bundle-features">
+                        ${bundle.features.map(f => `<li><i class="fa-solid fa-check" style="color: #25d366; margin-right: 10px;"></i>${f}</li>`).join('')}
+                    </ul>
+                    <button class="btn-tracking" style="width: 100%;" onclick="orderBundle('${bundle.id}')">Order Bundle</button>
+                </div>
+            `;
+        });
+
+        function orderBundle(id) {
+            const bundle = wholesaleBundles.find(b => b.id === id);
+            if (bundle) {
+                const cartItem = {
+                    id: bundle.id,
+                    name: bundle.name,
+                    price: bundle.price,
+                    image: bundle.image,
+                    quantity: 1,
+                    size: 'N/A',
+                    color: 'Mixed'
+                };
+                cartManager.addItem(cartItem);
+                window.location.href = 'cart.html';
+            }
+        }
+    </script>
+</body>
+</html>

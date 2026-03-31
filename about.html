@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story | Elite Wholesale</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/main.js" defer></script>
+    <style>
+        /* About Specific Premium Overrides */
+        .about-hero {
+            background: #ffffff;
+            padding: 180px 0 100px;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-size: clamp(48px, 8vw, 84px);
+            letter-spacing: -4px;
+            margin-bottom: 30px;
+            color: var(--text-main);
+        }
+
+        .about-hero p {
+            font-size: 20px;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+            margin-top: 100px;
+        }
+
+        .story-img-frame {
+            position: relative;
+            border-radius: 40px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            background: #f8f8f8;
+        }
+
+        .story-img-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .story-content h2 {
+            font-size: 42px;
+            letter-spacing: -1.5px;
+            margin-bottom: 30px;
+            color: var(--text-main);
+        }
+
+        .story-content p {
+            font-size: 17px;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 120px;
+        }
+
+        .mission-card {
+            background: #fcfcfc;
+            padding: 50px 40px;
+            border-radius: 32px;
+            border: 1px solid rgba(0,0,0,0.03);
+            transition: var(--transition);
+        }
+
+        .mission-card:hover {
+            background: #ffffff;
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+        }
+
+        .mission-card i {
+            font-size: 36px;
+            color: var(--accent);
+            margin-bottom: 30px;
+            display: block;
+        }
+
+        .mission-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .mission-card p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 1024px) {
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            .story-content {
+                order: 2;
+            }
+            .story-img-frame {
+                order: 1;
+            }
+            .mission-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body style="background: #ffffff;">
+    <!-- Top Nav Bar -->
+    <div class="top-nav-bar">
+        WHOLESALE PRICING | DIRECT FACTORY ACCESS | NATIONWIDE DELIVERY
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <a href="index.html" class="logo">ELITE <span>WHOLESALE</span></a>
+            
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="wholesale.html">Wholesale</a>
+                <a href="about.html" class="active">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div style="display: flex; gap: 20px; align-items: center; font-size: 20px;">
+                <a href="#"><i class="fa-solid fa-search"></i></a>
+                <a href="cart.html" style="position: relative;">
+                    <i class="fa-solid fa-shopping-bag"></i>
+                    <span class="cart-count badge" style="position: absolute; top: -8px; right: -8px; background: var(--accent); color: white; font-size: 10px; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800;">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="hero-tag" style="margin-bottom: 25px; border-color: var(--accent); color: var(--accent);">
+                🇬🇭 BORN IN GHANA
+            </div>
+            <h1>The Elite <span>Spirit.</span></h1>
+            <p>From factory floor to your front door—we are bridging the gap between premium global manufacturing and independent Ghanaian fashion brands.</p>
+
+            <!-- Story Grid 1 -->
+            <div class="story-grid">
+                <div class="story-content" style="text-align: left;">
+                    <h2>Democratizing <span>Quality.</span></h2>
+                    <p>
+                        We founded Elite Wholesale with a singular obsession: every Ghanaian entrepreneur deserves access to the same heavyweight cotton, precision stitching, and premium silhouettes used by the world's leading streetwear labels.
+                    </p>
+                    <p>
+                        We don't just sell t-shirts; we provide the canvas upon which your brand is built. Our blanks are engineered for the perfectionists—the brand owners who refuse to compromise on the tactile feel of their products.
+                    </p>
+                    <div style="display: flex; gap: 40px; margin-top: 40px;">
+                        <div>
+                            <div style="font-size: 32px; font-weight: 800; color: var(--text-main);">100%</div>
+                            <div style="font-size: 11px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 2px;">Premium Cotton</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 32px; font-weight: 800; color: var(--text-main);">500+</div>
+                            <div style="font-size: 11px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 2px;">Local Brands</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-img-frame">
+                    <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&q=80&w=1200" alt="Premium Elite Textile">
+                </div>
+            </div>
+
+            <!-- Mission Cards -->
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <i class="fa-solid fa-gem"></i>
+                    <h3>Uncompromising Luxe</h3>
+                    <p>We source only 240GSM+ fabrics, ensuring every blank feels substantial and lasts as long as your brand legacy.</p>
+                </div>
+                <div class="mission-card">
+                    <i class="fa-solid fa-rocket"></i>
+                    <h3>Empowering Growth</h3>
+                    <p>Direct wholesale pricing removes the middleman, putting the profit back into the pockets of Ghanaian merchants.</p>
+                </div>
+                <div class="mission-card">
+                    <i class="fa-solid fa-truck-fast"></i>
+                    <h3>Modern Logistics</h3>
+                    <p>Our centralized distribution network ensures your stock reaches you anywhere in Ghana, fast and secure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="color: white; margin-bottom: 24px;">ELITE<span>WHOLESALE</span></a>
+                    <p>Connecting Ghanaian entrepreneurs with world-class premium fashion supply chains.</p>
+                </div>
+                <!-- ... other cols ... -->
+                <div class="footer-col">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="#">Our Ethics</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Elite Wholesale. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+        function updateCartBadge() {
+            const counts = document.querySelectorAll('.cart-count');
+            const total = cartManager.getCartCount();
+            counts.forEach(c => c.textContent = total);
+        }
+        updateCartBadge();
+    </script>
+</body>
+</html>
