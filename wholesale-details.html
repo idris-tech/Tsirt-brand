@@ -115,7 +115,24 @@
 
         /* Mobile Responsive Allocation Grid */
         @media (max-width: 768px) {
-            .config-grid { grid-template-columns: 1fr; gap: 40px; }
+            .config-grid { 
+                display: flex;
+                flex-direction: column;
+                gap: 40px; 
+            }
+            
+            .bundle-summary-card {
+                position: relative !important;
+                top: 0 !important;
+                order: 2; /* Put summary at the bottom on mobile */
+                width: 100%;
+                margin-top: 40px;
+            }
+
+            .config-table-wrapper {
+                order: 1;
+            }
+            
             .configurator-wrapper { padding: 120px 0 60px; }
             
             .config-table, .config-table thead, .config-table tbody, .config-table th, .config-table td, .config-table tr { 
@@ -135,14 +152,14 @@
             .config-table tr {
                 background: #f8f8f8;
                 border-radius: 20px;
-                margin-bottom: 25px;
+                margin-bottom: 40px; /* More space between cards */
                 overflow: hidden;
                 border: 1px solid rgba(0,0,0,0.05);
             }
 
             .qty-input {
-                width: 60px; /* Slimmer for mobile packing */
-                padding: 10px;
+                width: 65px; /* Better touch target */
+                padding: 12px;
             }
 
             .style-card {
@@ -217,7 +234,7 @@
                 <div class="hero-tag" style="margin-bottom: 25px; border-color: var(--accent); color: var(--accent);">
                     ⚡ ELITE BUNDLE CONFIGURATOR
                 </div>
-                <h1 style="font-size: 48px; letter-spacing: -2px; margin-bottom: 60px;">Customize Your <span>${bundle.title}</span></h1>
+                <h1 style="font-size: 48px; letter-spacing: -2px; margin-bottom: 60px;">Customize Your <span>${bundle.name}</span></h1>
 
                 <!-- Step 1: Select Style -->
                 <div style="margin-bottom: 60px;">
@@ -245,7 +262,7 @@
                 <div class="config-grid">
                     <!-- Left: Summary -->
                     <div class="bundle-summary-card">
-                        <h3 style="font-size: 24px; margin-bottom: 20px; color: var(--text-main);">${bundle.title}</h3>
+                        <h3 style="font-size: 24px; margin-bottom: 20px; color: var(--text-main);">${bundle.name}</h3>
                         <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 30px;">
                             Distribute your <strong>${bundle.count} pieces</strong> across the following colors and sizes for your selected <span id="selected-style-label" style="color: var(--accent); font-weight: 800;">Heavyweight Essential</span>.
                         </p>
@@ -359,7 +376,7 @@
         function handleAddBundle() {
             const bundleToCart = {
                 id: bundle.id,
-                name: `${bundle.title} (Custom Mix)`,
+                name: `${bundle.name} (Custom Mix)`,
                 price: bundle.price,
                 image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&q=80&w=800',
                 description: `Breakdown: ${Object.entries(currentSelections).filter(([k,v]) => v > 0).map(([k,v]) => `${k} x${v}`).join(', ')}`,
